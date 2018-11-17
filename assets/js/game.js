@@ -8,49 +8,49 @@ var triviaQuestions = [{
     answer: "C.S Lewis"
 },
 {
-    questions: "Who was the author of the Narnia series?",  // Q2
-    answerList: ["C.J. Parker", "C.S. Lewis", "Don Knotts", "Mary J. Blige", "Robert Ludlum"],
-    answer: 1
+    questions: "Who tells the children about Aslan?",  // Q2
+    answerList: ["Mr Tumnus", "Mr and Mrs Beaver", "The White Witch", "a Satyr", "Mr T"],
+    answer: "Mr and Mrs Beaver"
 },
 {
-    questions: "Who was the author of the Narnia series?",  // Q3
-    answerList: ["C.J. Parker", "C.S. Lewis", "Don Knotts", "Mary J. Blige", "Robert Ludlum"],
-    answer: 1
+    questions: "Who befriends the White Witch?",  // Q3
+    answerList: ["Susan", "Peter", "Edmund", "Lucy", "Bob"],
+    answer: "Edmund"
 },
 {
-    questions: "Who was the author of the Narnia series?",  // Q4
-    answerList: ["C.J. Parker", "C.S. Lewis", "Don Knotts", "Mary J. Blige", "Robert Ludlum"],
-    answer: 1
+    questions: "What gift does Father Christmas give Susan?",  // Q4
+    answerList: ["a Shield", "a Sword", "a Horn", "a Bow", "a Desert Eagle"],
+    answer: "a Horn"
 },
 {
-    questions: "Who was the author of the Narnia series?",  // Q5
-    answerList: ["C.J. Parker", "C.S. Lewis", "Don Knotts", "Mary J. Blige", "Robert Ludlum"],
-    answer: 1
+    questions: "Who Where do they plan to meet Aslan?",  // Q5
+    answerList: ["at the stone table", "at the witchs house", "at the lamppost", "at the beach", "at a rave"],
+    answer: "at the stone table"
 },
 {
-    questions: "Who was the author of the Narnia series?",  // Q6
-    answerList: ["C.J. Parker", "C.S. Lewis", "Don Knotts", "Mary J. Blige", "Robert Ludlum"],
-    answer: 1
+    questions: "What is a faun?",  // Q6
+    answerList: ["half man half goat", "half man half dwarf", "half man half centaur half horse", "half bird half snake", "dwarf elf"],
+    answer: "half man half goat"
 },
 {
-    questions: "Who was the author of the Narnia series?",  // Q7
-    answerList: ["C.J. Parker", "C.S. Lewis", "Don Knotts", "Mary J. Blige", "Robert Ludlum"],
-    answer: 1
+    questions: "What does he give Lucy?",  // Q7
+    answerList: ["a potion", "a bow and arrow", "a crown", "a stick", "a soup bowl"],
+    answer: "a potion"
 },
 {
-    questions: "Who was the author of the Narnia series?",  // Q8
-    answerList: ["C.J. Parker", "C.S. Lewis", "Don Knotts", "Mary J. Blige", "Robert Ludlum"],
-    answer: 1
+    questions: "Who is the first to reach Narnia?",  // Q8
+    answerList: ["Peter", "Susan", "Lucy", "Edmund", "Tupac"],
+    answer: "Lucy"
 },
 {
-    questions: "Who was the author of the Narnia series?",  // Q9
-    answerList: ["C.J. Parker", "C.S. Lewis", "Don Knotts", "Mary J. Blige", "Robert Ludlum"],
-    answer: 1
+    questions: "Who are the children following when they return to the lamppost?",  // Q9
+    answerList: ["Aslan", "Mr Tumnus", "the White Stag", "The Mountain", "The Incredible Mr Ripley"],
+    answer: "the White Stag"
 },
 {
-    questions: "Who was the author of the Narnia series?",  // Q10
-    answerList: ["C.J. Parker", "C.S. Lewis", "Don Knotts", "Mary J. Blige", "Robert Ludlum"],
-    answer: 1
+    questions: "Why are the children sent to the country?",  // Q10
+    answerList: ["their mother is ill", "its summer vacation", "there are air raids in London", "tea time", "to party"],
+    answer: "there are air raids in London"
 }];
 
 var quotes = [{
@@ -91,7 +91,7 @@ var currentQuestion ;
 var correctAnswer ;
 var incorrectAnswer ;
 var unanswered ;
-var time ;
+var time = 30 ;
 var questionCounter = 1;
 
 var messages = {
@@ -101,21 +101,49 @@ var messages = {
     complete: "Let's check out that score!  "
 }
 
-// trivia section hidden to start game
+// Hidden sections to start game
 $("#triviaSection").hide();
+$("#answerSection").hide();
+$("#resultSection").hide();
 
 $("#startBtn").on("click", function(){
     $("#gameStart").hide();
     $("#triviaSection").show();
 })
 
+questions();
+answers();
+questionNum();
 
+// Function to start adding questions to first card
+function questions() {
+    for (var i = 0; i < triviaQuestions.length; i++){
+        $(".questions").text(triviaQuestions[i].questions);
+        // $(".questionNum").text("Question " + questionCounter + " of 10");
+    }
+}
 
+// function to start adding answers to second card
+function answers(){
+    for (var i = 0; i < triviaQuestions.length; i++){
+        var apnd = '<input type="radio" id="radioBtn>';
+        $(".answers").append(apnd).text(triviaQuestions[i].answerList);
+    }
+    
+}
 
+// function to show correct or incorrect answer
+$("#submitBtn").on("click", function(){
+    $("#triviaSection").hide();
+    $("#answerSection").show();
+    questionCounter++;
+    console.log(questionCounter);
+})
 
-
-
-
+// function to show question number
+function questionNum(){
+    $(".questionNum").text("Question " + questionCounter + " of 10")
+}
 
 
 
