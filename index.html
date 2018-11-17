@@ -17,7 +17,8 @@
 
 <body>
     <div class="jumbotron"></div>
-    <div class="container" id="gameStart"> <!-- Game Start Area Begins -->
+    <div class="container" id="gameStart">
+        <!-- Game Start Area Begins -->
         <div class="row">
             <div class="col text-center">
                 <h2>World of Narnia Trivia</h2>
@@ -37,21 +38,22 @@
             </div>
         </div>
     </div> <!-- Game Start Area Ends -->
-    <div class="container" id="triviaSection"> <!-- Trivia Section Starts -->
+    <div class="container" id="triviaSection">
+        <!-- Trivia Section Starts -->
         <div class="row">
             <div class="col-md-6">
                 <div id="triviaQuestions" class="card-deck justify-content-center">
                     <div class="card text-center border-danger animated slideInLeft">
                         <div class="card-header border-danger " id="timer">Time Placeholder</div>
                         <div class="questions align-middle"></div>
-                        <div class="card-footer border-danger questionNum"></div>
+                        <div class="card-footer border-danger questionNum">Question 1 of 10</div>
                     </div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div id="triviaAnswers" class="card-deck justify-content-center">
                     <div class="card text-center border-danger animated slideInRight">
-                        <div class="card-header border-danger questionNum"></div>
+                        <div class="card-header border-danger questionNum">Question 1 of 10</div>
                         <div class="answers"></div>
                         <div class="card-footer border-danger">
                             <button class="btn-success btn-block text-center" id="submitBtn">Submit Answer</button>
@@ -62,15 +64,21 @@
         </div>
     </div> <!-- Trivia Section Ends -->
     <div class="container" id="answerSection">
-            <div class="card text-center border-danger animated slideInRight">
-                    <div class="card-header border-danger questionNum"></div>
-                    <div class="answers"></div>
+        <div class="card text-center border-danger animated slideInRight">
+            <div class="card-header border-danger questionNum"></div>
+            <div class="answers"></div>
+            <div class="card-footer border-danger quote"></div>
+        </div>
+    </div>
+    <div class="container" id="resultSection">
+            <div class="card text-center border-danger animated zoomIn">
+                    <div class="card-header border-danger quote"></div>
+                    <div class="results"></div>
                     <div class="card-footer border-danger">
-                        <!-- <button class="btn-success btn-block text-center">Submit Answer</button> -->
+                            <button class="btn-success btn-block text-center" id="resetBtn">Play Again?</button>
                     </div>
                 </div>
     </div>
-    <div class="container" id="resultSection"></div>
 
     <!-- BootStrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
