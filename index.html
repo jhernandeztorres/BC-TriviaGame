@@ -12,6 +12,8 @@
         crossorigin="anonymous">
     <!-- Animate CSS -->
     <link rel="stylesheet" href="./assets/css/animate.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>BC Trivia Game</title>
 </head>
 
@@ -32,8 +34,7 @@
                     between 1950 and 1956 in England.</p>
                 <p>Read more about the Chronicles of Narnia <a href="https://en.wikipedia.org/wiki/The_Chronicles_of_Narnia">here</a></p>
                 <div class="card-deck justify-content-center">
-                    <p>"Remember that all worlds draw to an end and that noble death is a treasure which no one is too
-                        poor to buy."</p>
+                    <div class="quote"></div>
                 </div>
             </div>
         </div>
@@ -44,7 +45,7 @@
             <div class="col-md-6">
                 <div id="triviaQuestions" class="card-deck justify-content-center">
                     <div class="card text-center border-danger animated slideInLeft">
-                        <div class="card-header border-danger " id="timer">Time Placeholder</div>
+                        <div class="card-header border-danger " id="timer"></div>
                         <div class="questions align-middle"></div>
                         <div class="card-footer border-danger questionNum">Question 1 of 10</div>
                     </div>
@@ -64,9 +65,9 @@
         </div>
     </div> <!-- Trivia Section Ends -->
     <div class="container" id="answerSection">
-        <div class="card text-center border-danger animated slideInRight">
+        <div class="card text-center border-danger animated zoomIn">
             <div class="card-header border-danger questionNum"></div>
-            <div class="answers"></div>
+            <div class="correctAnswer"></div>
             <div class="card-footer border-danger quote"></div>
         </div>
     </div>
@@ -75,14 +76,16 @@
                     <div class="card-header border-danger quote"></div>
                     <div class="results"></div>
                     <div class="card-footer border-danger">
-                            <button class="btn-success btn-block text-center" id="resetBtn">Play Again?</button>
+                            <button class="btn-success text-center" id="resetBtn">Play Again?</button>
                     </div>
                 </div>
     </div>
 
     <!-- BootStrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
