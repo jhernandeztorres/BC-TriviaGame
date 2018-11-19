@@ -1,3 +1,15 @@
+body {
+    background-color: #99accc;
+}
+
+.jumbotron-fluid {
+    background-image: url("../images/the-banner-of-narnia-the-voyage-of-the-dawn-treader.png");
+    background-size: cover;
+    /* height: 90%; */
+    height: 575px;
+    /* width: 100%; */
+}
+
 input {
     margin: 2px;
 }

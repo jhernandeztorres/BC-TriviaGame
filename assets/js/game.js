@@ -1,6 +1,5 @@
 $(document).ready(function () {
 
-    // Obj to hold questions and answers
     // Narnia themed questions
     var triviaQuestions = [{
             questions: "Who was the author of the Narnia series?", // Q1
@@ -107,8 +106,6 @@ $(document).ready(function () {
     $("#startBtn").on("click", function () {
         $("#gameStart").hide();
         $("#triviaSection").show();
-        // questionCounter++;
-        console.log("Question counter @ startBtn: " + questionCounter);
         displayQuestions();
         answers();
         gameState = true;
@@ -124,7 +121,6 @@ $(document).ready(function () {
         //gets the current question from global variable currentQuestion
         // display a question
         currentQuestion++;
-        console.log("Question counter @ displayQuestion: " + questionCounter);
         $(".questions").text(triviaQuestions[currentQuestion].questions);
     }
 
@@ -184,15 +180,12 @@ $(document).ready(function () {
         if (selValue === triviaQuestions[currentQuestion].answer) {
             $(".correctAnswer").text(messages.correct)
             correctAnswer++;
-            console.log("Correct Answer: " + correctAnswer);
         } else if (selValue === undefined) {
             unanswered++;
             $(".correctAnswer").text(messages.missed)
-            console.log("Unanswered Questions: " + unanswered);
         } else {
             $(".correctAnswer").text(messages.incorrect)
             incorrectAnswer++;
-            console.log("Incorrect Answer: " + incorrectAnswer);
         }
     }
 
@@ -238,7 +231,6 @@ $(document).ready(function () {
             $("#triviaSection").hide();
             $("#answerSection").show();
             unanswered++;
-            console.log("Unanswered counter: " + unanswered);
             setTimeout(function () {
                 $("#answerSection").hide();
                 $("#triviaSection").show();
@@ -249,7 +241,6 @@ $(document).ready(function () {
             timeLeft = 19;
             gameState = false;
             $(".correctAnswer").text(messages.endTime);
-            console.log("time ran out and I ran");
         }
     }
 
